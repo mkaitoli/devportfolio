@@ -429,28 +429,142 @@ footer {
 
 /*
     ---------------------------
-    ----- 5. About Styles -----
+    ----- 5. About Education Styles -----
     ---------------------------
-*/
+/* Shared container for About and Education sections */
+#about-education-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 30px;
+	padding: 50px 15px;
 
-#about {
-    padding: 75px 15px;
-    border-bottom: 1px solid $border;
+	.boxed-section {
+		flex: 1 1 45%;
+		background-color: #fff;
+		border: 1px solid $border;
+		border-radius: 8px;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+		padding: 30px;
+		box-sizing: border-box;
 
-    h2 {
-        color: $heading;
-    }
+		/* About styles */
+		&#about-box {
+			#about {
+				h2 {
+					color: $heading;
+				}
 
-    p {
-        color: $text;
-        margin: 0;
-    }
+				p {
+					color: $text;
+					margin: 0;
+				}
+
+				.about-container {
+					display: flex;
+					align-items: flex-start;
+					gap: 20px;
+					margin-top: 20px;
+
+					.profile-picture.squared {
+						width: 150px;
+						height: 150px;
+						border-radius: 10px;
+						overflow: hidden;
+						flex-shrink: 0;
+
+						img {
+							width: 100%;
+							height: 100%;
+							object-fit: cover;
+						}
+					}
+
+					.about-text {
+						flex: 1;
+						color: $text;
+						font-size: 1em;
+						line-height: 1.6;
+					}
+				}
+			}
+		}
+
+		/* Education styles */
+		&#education-box {
+			#education {
+				text-align: center;
+
+				h2 {
+					color: $heading;
+					margin-bottom: 50px;
+				}
+
+				.education-block {
+					max-width: 700px;
+					margin: 0 auto 30px auto;
+					padding: 15px;
+					border: 1px solid $border;
+					text-align: left;
+
+					h3 {
+						font-weight: 500;
+						float: left;
+						margin: 0;
+						color: $heading;
+					}
+
+					span {
+						color: $text;
+						float: right;
+					}
+
+					h4 {
+						color: $text;
+						clear: both;
+						font-weight: 500;
+						margin: 0 0 15px 0;
+					}
+
+					p,
+					ul {
+						margin: 0;
+						color: $text;
+						font-size: 0.9em;
+					}
+
+					ul {
+						padding: 0 0 0 15px;
+					}
+				}
+			}
+		}
+	}
+
+	/* Responsive layout for smaller screens */
+	@media (max-width: 992px) {
+		flex-direction: column;
+
+		.boxed-section {
+			width: 100%;
+		}
+
+		.about-container {
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+
+			.about-text {
+				text-align: left;
+			}
+		}
+	}
 }
 
-/*
-    --------------------------------
-    ----- 6. Experience Styles -----
-    --------------------------------
+    -------------------------------
+    ----- 7. Experience Styles -----
+    -------------------------------
 */
 
 #experience {
@@ -556,60 +670,6 @@ footer {
     top: 10px;
     font-weight: 300;
     color: #374054;
-}
-
-/*
-    -------------------------------
-    ----- 7. Education Styles -----
-    -------------------------------
-*/
-
-#education {
-    padding: 50px 15px 20px 15px;
-    border-bottom: 1px solid $border;
-    text-align: center;
-
-    h2 {
-        color: $heading;
-        margin-bottom: 50px;
-    }
-}
-
-.education-block {
-    max-width: 700px;
-    margin: 0 auto 30px auto;
-    padding: 15px;
-    border: 1px solid $border;
-    text-align: left;
-
-    h3 {
-        font-weight: 500;
-        float: left;
-        margin: 0;
-        color: $heading;
-    }
-
-    span {
-        color: $text;
-        float: right;
-    }
-
-    h4 {
-        color: $text;
-        clear: both;
-        font-weight: 500;
-        margin: 0 0 15px 0;
-    }
-
-    p, ul {
-        margin: 0;
-        color: $text;
-        font-size: 0.9em;
-    }
-
-    ul {
-        padding: 0 0 0 15px;
-    }
 }
 
 /*
